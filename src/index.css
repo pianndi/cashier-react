@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-back;
+    font-family: "Inter", Sans-Serif;
+  }
+}
+@layer components {
+  .nav-item {
+    @apply flex flex-col items-center h-12 text-light;
+  }
+  .nav-item-icon {
+    @apply w-6 aspect-square text-center text-lg;
+  }
+  .nav-item.active {
+    @apply text-primary;
+  }
+  .arrow-down {
+    @apply w-0 h-0 
+            border-l-[6px] border-l-transparent 
+            border-r-[6px] border-r-transparent 
+            border-t-[10px] border-t-extraLight;
+  }
+  .arrow-right {
+    @apply w-0 h-0 
+            border-b-[10px] border-b-transparent 
+            border-l-[8px] border-l-primary 
+            border-t-[10px] border-t-transparent;
+  }
+  .add-product-container {
+    @apply mt-3 bg-white flex flex-col divide-y-[1px] divide-back;
+  }
+  .add-product-item,
+  .receipt-item {
+    @apply grid grid-cols-2 px-4 py-2;
+  }
+  .receipt-item {
+    @apply py-1;
+  }
+  .add-product-placeholder {
+    @apply text-extraLight px-2;
+  }
+  .add-product-button {
+    @apply w-full col-span-full rounded-lg py-1 w-full border-2 bg-primary border-light text-white disabled:bg-back;
+  }
+  .add-product-input {
+    @apply text-right focus:outline-0;
+  }
+  .add-product-desc,
+  .receipt-desc {
+    @apply flex items-center text-right justify-end;
+  }
+  .receipt-price {
+    @apply justify-between;
+  }
+  .StyledReceipt {
+    @apply max-w-md mx-auto shadow-lg p-2;
+    background-color: #fff;
+    position: relative;
+  }
+
+  .StyledReceipt::after {
+    background-image: linear-gradient(135deg, #fff 0.5rem, transparent 0),
+      linear-gradient(-135deg, #fff 0.5rem, transparent 0);
+    background-position: left-bottom;
+    background-repeat: repeat-x;
+    background-size: 1rem;
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -1rem;
+    left: 0;
+    width: 100%;
+    height: 1rem;
+  }
+  .StyledReceipt::before {
+    background-image: linear-gradient(45deg, #fff 0.5rem, transparent 0),
+      linear-gradient(-45deg, #fff 0.5rem, transparent 0);
+    background-position: left-top;
+    background-repeat: repeat-x;
+    background-size: 1rem;
+    content: "";
+    display: block;
+    position: absolute;
+    top: -1rem;
+    left: 0;
+    width: 100%;
+    height: 1rem;
+  }
+}
+/* * {
+  outline: 2px solid black;
+} */
